@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<style>
+		body
+		{
+			background-color: #424242;
+			font-family: tahoma;
+		}
+		.container
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			width: 100vw;
+		}
+		#container
+		{
+			width: 200px;
+			padding: 8px 8px 20px 8px;
+			margin: 20px auto;
+			background-color: #ABABAB;
+			border-radius: 4px;
+			border-top: 2px solid #FFF;
+			border-right: 2px solid #FFF;
+			border-bottom: 2px solid #C1C1C1;
+			border-left: 2px solid #C1C1C1;
+			box-shadow: -3px 3px 7px red,inset -100px 0 100px blue;
+		}
+		#display
+		{
+			display: block;
+			margin: 15px auto;
+			height: 42px;
+			width: 174px;
+			padding: 0 10px;
+			border-radius: 4px;
+			border-top: 2px solid #C1C1C1;
+			border-right: 2px solid #C1C1C1;
+			border-bottom: 2px solid #FFF;
+			border-left: 2px solid #FFF;
+			background-color: #FFF;
+			box-shadow: inset 0px 0px 10px #030303 ;
+			font-size: 28px;
+			color: red;
+			text-align: right;
+			font-weight: 700;
+		}
+		.button 
+		{
+			display: inline-block;
+			margin: 2px;
+			width: 42px;
+			height: 42px;
+			font-size: 16px;
+			font-weight: bold;
+			border-radius: 4px;
+		}
+		.mathbutton
+		{
+			margin: 2px 2px 6px 2px;
+			color: #FFF;
+			text-shadow: -1px -1px 0px #44006F;
+			background-color: #434343;
+			border-top: 2px solid #C1C1C1;
+			border-right: 2px solid #C1C1C1;
+			border-bottom: 2px solid #181818;
+			border-left: 2px solid #181818;
+			box-shadow: 0px 0px 2px# 030303 inset 0px -20px 1px #2E2E2E;
+			width: 42px;
+			height: 42px;
+
+		}
+		.button:hover
+		{
+			background-color: blueviolet;
+			color: white;
+		}
+		.mathbuton:hover
+		{
+			background-color: red;
+			color: white;
+		}
+		#clearbutton
+		{
+			background-color: red;
+			color: white;
+		}
+
+		/*.digits
+		{
+			color: #181818;
+			text-shadow: 1px 1px 0px #FFF;
+			background-color: #EBEBEB;
+			border-top: 2px solid #FFF;
+			border-right: 2px solid #FFF;
+			border-bottom: 2px solid #C1C1C1;
+			border-left: 2px solid #C1C1C1;
+			border-radius: 4px;
+			box-shadow: 0px 0px 2px #030303 inset 0px -20px 1px #DCDCDC;
+
+		}*/
+	</style>
+</head>
+<body>
+	<div class="container">
+		<fieldset id="container">
+			<form name="Calculator">
+				<input type="text" name="display" id="display" readonly>
+				<input type="button" class="button digits" value="7" onclick="Calculator.display.value += '7'">
+				<input type="button" class="button digits" value="8" onclick="Calculator.display.value += '8'">
+				<input type="button" class="button digits" value="9" onclick="Calculator.display.value += '9'">
+
+				<input type="button" class="mathbutton" value="+" onclick="Calculator.display.value += '+'">
+
+				<br>
+
+				<input type="button" class="button digits" value="4" onclick="Calculator.display.value += '4'">
+				<input type="button" class="button digits" value="5" onclick="Calculator.display.value += '5'">
+				<input type="button" class="button digits" value="6" onclick="Calculator.display.value += '6'">
+
+				<input type="button" class="mathbutton" value="-" onclick="Calculator.display.value += '-'">
+
+				<br>
+
+				<input type="button" class="button digits" value="1" onclick="Calculator.display.value += '1'">
+				<input type="button" class="button digits" value="2" onclick="Calculator.display.value += '2'">
+				<input type="button" class="button digits" value="3" onclick="Calculator.display.value += '3'">
+
+				<input type="button" class="mathbutton" value="X" onclick="Calculator.display.value += '*'">
+
+				<br>
+
+				<input id="clearbutton" type="button" class="button digits" value="C" onclick="Calculator.display.value = ''">
+				<input type="button" class="button digits" value="0" onclick="Calculator.display.value += '0'">
+				<input type="button" class="button digits" value="=" onclick="Calculator.display.value = eval(Calculator.display.value)">
+
+				<input type="button" class="mathbutton" value="/" onclick="Calculator.display.value += '/'"> 
+			</form>
+		</fieldset>
+	</div>
+</body>
+</html>
